@@ -83,7 +83,7 @@ module.exports = new ContainershipPlugin({
 
                         core.loggers[applicationName].log('verbose', `Starting containership/ntp on leader node[${nodeId}]`);
                         docker.run('containership/ntp:latest', [], process.stdout, {
-                            name: 'containership/ntp',
+                            name: 'containership-ntp',
                             Binds: ["/var/run/docker.sock:/var/run/docker.sock"],
                             HostConfig: {
                                 Privileged: true,
