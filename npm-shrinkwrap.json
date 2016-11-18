@@ -13,6 +13,11 @@
       "from": "containership.plugin@>=0.3.0 <0.4.0",
       "resolved": "https://registry.npmjs.org/containership.plugin/-/containership.plugin-0.3.0.tgz"
     },
+    "core-util-is": {
+      "version": "1.0.2",
+      "from": "core-util-is@>=1.0.0 <1.1.0",
+      "resolved": "https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz"
+    },
     "debug": {
       "version": "2.2.0",
       "from": "debug@2.2.0",
@@ -24,6 +29,23 @@
       "from": "diff@1.4.0",
       "resolved": "https://registry.npmjs.org/diff/-/diff-1.4.0.tgz",
       "dev": true
+    },
+    "docker-modem": {
+      "version": "0.3.2",
+      "from": "docker-modem@>=0.3.0 <0.4.0",
+      "resolved": "https://registry.npmjs.org/docker-modem/-/docker-modem-0.3.2.tgz",
+      "dependencies": {
+        "debug": {
+          "version": "0.7.4",
+          "from": "debug@>=0.7.4 <0.8.0",
+          "resolved": "https://registry.npmjs.org/debug/-/debug-0.7.4.tgz"
+        }
+      }
+    },
+    "dockerode": {
+      "version": "2.3.1",
+      "from": "dockerode@latest",
+      "resolved": "https://registry.npmjs.org/dockerode/-/dockerode-2.3.1.tgz"
     },
     "escape-string-regexp": {
       "version": "1.0.2",
@@ -46,8 +68,12 @@
     "inherits": {
       "version": "2.0.3",
       "from": "inherits@>=2.0.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz",
-      "dev": true
+      "resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz"
+    },
+    "isarray": {
+      "version": "0.0.1",
+      "from": "isarray@0.0.1",
+      "resolved": "https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz"
     },
     "jade": {
       "version": "0.26.3",
@@ -68,6 +94,16 @@
           "dev": true
         }
       }
+    },
+    "jsonparse": {
+      "version": "0.0.5",
+      "from": "jsonparse@0.0.5",
+      "resolved": "https://registry.npmjs.org/jsonparse/-/jsonparse-0.0.5.tgz"
+    },
+    "JSONStream": {
+      "version": "0.10.0",
+      "from": "JSONStream@0.10.0",
+      "resolved": "https://registry.npmjs.org/JSONStream/-/JSONStream-0.10.0.tgz"
     },
     "lodash": {
       "version": "3.10.1",
@@ -110,17 +146,37 @@
       "resolved": "https://registry.npmjs.org/ms/-/ms-0.7.1.tgz",
       "dev": true
     },
+    "readable-stream": {
+      "version": "1.0.34",
+      "from": "readable-stream@>=1.0.26-4 <1.1.0",
+      "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-1.0.34.tgz"
+    },
     "sigmund": {
       "version": "1.0.1",
       "from": "sigmund@>=1.0.0 <1.1.0",
       "resolved": "https://registry.npmjs.org/sigmund/-/sigmund-1.0.1.tgz",
       "dev": true
     },
+    "split-ca": {
+      "version": "1.0.1",
+      "from": "split-ca@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/split-ca/-/split-ca-1.0.1.tgz"
+    },
+    "string_decoder": {
+      "version": "0.10.31",
+      "from": "string_decoder@>=0.10.0 <0.11.0",
+      "resolved": "https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz"
+    },
     "supports-color": {
       "version": "1.2.0",
       "from": "supports-color@1.2.0",
       "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-1.2.0.tgz",
       "dev": true
+    },
+    "through": {
+      "version": "2.3.8",
+      "from": "through@>=2.2.7 <3.0.0",
+      "resolved": "https://registry.npmjs.org/through/-/through-2.3.8.tgz"
     },
     "to-iso-string": {
       "version": "0.0.2",

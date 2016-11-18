@@ -3,6 +3,9 @@
 const _ = require('lodash');
 const ContainershipPlugin = require('containership.plugin');
 
+const Docker = require("dockerode");
+const docker = new Docker({socketPath: "/var/run/docker.sock"});
+
 module.exports = new ContainershipPlugin({
     name: 'ntp',
     type: 'core',
@@ -47,6 +50,45 @@ module.exports = new ContainershipPlugin({
                 }
             });
         };
+
+        // launch NTP on leader nodes
+        if(core.options.mode == 'leader') {
+            const attributes = core.cluster.legiond.get_attributes();
+            const nodeId = attributes.id;
+
+            return docker.pull('containership/ntp:latest', (err, stream) => {
+                if (err) {
+                    return core.loggers[applicationName].log('verbose', `Failed to pull containership/ntp on leader node[${nodeId}]`);
+                }
+
+                docker.modem.followProgress(stream, onFinished);
+                function onFinished(err, output) {
+                    if (err) {
+                        return core.loggers[applicationName].log('verbose', `Failed to pull containership/ntp on leader node[${nodeId}]`);
+                    }
+
+                    docker.run('containership/ntp:latest', [], process.stdout, {
+                        Binds: ["/var/run/docker.sock:/var/run/docker.sock"],
+                        HostConfig: {
+                            Privileged: true,
+                            RestartPolicy: {
+                                Name: "on-failure",
+                                MaximumRetryCount: 5
+                            },
+                            CpuShares: Math.floor(0.1 * 1024),
+                            Memory: 16 * 1024 * 1024 // 16MB,
+                        }
+                    }, (err, data, container) => {
+                        if(err) {
+                            return core.loggers[applicationName].log('verbose', `Failed to run containership/ntp on leader node[${nodeId}]`);
+                        } else {
+                            return core.loggers[applicationName].log('verbose', `Successfully started containership/ntp on leader node[${nodeId}]`);
+                        }
+
+                    });
+                }
+            });
+        }
 
         if(core.cluster.praetor.is_controlling_leader()) {
             addApplication();
