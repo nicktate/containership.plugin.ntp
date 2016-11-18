@@ -10,6 +10,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "containership.plugin": "^0.3.0",
+    "dockerode": "^2.3.1",
     "lodash": "^3.3.1"
   },
   "devDependencies": {
