@@ -1,6 +1,6 @@
 {
   "name": "containership.plugin.ntp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "dependencies": {
     "commander": {
       "version": "2.3.0",
