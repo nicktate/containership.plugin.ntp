@@ -1,15 +1,15 @@
 {
-  "name": "containership.plugin.ntp",
-  "version": "1.0.3",
-  "description": "",
+  "name": "@containership/containership.plugin.ntp",
+  "version": "2.0.0-beta-1",
+  "description": "Containership plugin ntp",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@containership/containership.plugin": "git://github.com/containership/containership.plugin#v2",
+    "@containership/containership.plugin": "^2.0.0-beta",
     "lodash": "^4.17.4"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Containership Developers <developers@containership.io>",
+  "license": "MIT"
 }
