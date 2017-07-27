@@ -1,13 +1,13 @@
 {
   "name": "@containership/containership.plugin.ntp",
-  "version": "2.0.0-beta-1",
+  "version": "2.0.0-beta-2",
   "description": "Containership plugin ntp",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@containership/containership.plugin": "^2.0.0-beta",
+    "@containership/containership.plugin": "^2.0.0-beta-2",
     "lodash": "^4.17.4"
   },
   "author": "Containership Developers <developers@containership.io>",
